@@ -1,15 +1,14 @@
 FROM golang:1.15 AS build
-WORKDIR /go/src
-COPY pkg/server ./pkg/server
-COPY main.go .
+WORKDIR /go/src/github.com/bayashico0130/gin-app
 
 ENV CGO_ENABLED=0
-RUN go get -d -v ./...
+RUN git clone https://bayashico0130:koba167008@github.com/bayashico0130/gin-app /go/src/github.com/bayashico0130/gin-app
+RUN go get -d -v -u ./...
 
-RUN go build -a -installsuffix cgo -o chimera .
+RUN go build -a -installsuffix cgo -o chimera github.com/bayashico0130/gin-app
 
 FROM scratch AS runtime
 ENV GIN_MODE=release
-COPY --from=build /go/src/chimera ./
+COPY --from=build /go/src/github.com/bayashico0130/gin-app/chimera ./
 EXPOSE 8080/tcp
 ENTRYPOINT ["./chimera"]
