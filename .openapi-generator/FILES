@@ -1,0 +1,11 @@
+.openapi-generator-ignore
+Dockerfile
+api/openapi.yaml
+main.go
+pkg/server/README.md
+pkg/server/api_default.go
+pkg/server/model_error.go
+pkg/server/model_new_pet.go
+pkg/server/model_pet.go
+pkg/server/model_pet_all_of.go
+pkg/server/routers.go
