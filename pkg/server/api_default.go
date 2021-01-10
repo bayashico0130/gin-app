@@ -11,27 +11,13 @@
 package chimera
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
 )
 
-// AddPet - 
-func AddPet(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{})
-}
-
-// DeletePet - 
-func DeletePet(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{})
-}
-
-// FindPetById - 
-func FindPetById(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{})
-}
-
-// FindPets - 
-func FindPets(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{})
+type Api interface {
+	Index(c *gin.Context)
+	AddPet(c *gin.Context)
+	DeletePet(c *gin.Context)
+	FindPetById(c *gin.Context)
+	FindPets(c *gin.Context)
 }

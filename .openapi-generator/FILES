@@ -1,7 +1,4 @@
-.openapi-generator-ignore
-Dockerfile
 api/openapi.yaml
-main.go
 pkg/server/README.md
 pkg/server/api_default.go
 pkg/server/model_error.go

@@ -8,7 +8,7 @@ RUN go get -d -v -u ./...
 RUN go build -a -installsuffix cgo -o chimera github.com/bayashico0130/gin-app
 
 FROM scratch AS runtime
-ENV GIN_MODE=release
+ENV GIN_MODE=debug
 COPY --from=build /go/src/github.com/bayashico0130/gin-app/chimera ./
 EXPOSE 8080/tcp
 ENTRYPOINT ["./chimera"]

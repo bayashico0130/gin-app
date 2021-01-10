@@ -13,13 +13,6 @@ package main
 import (
 	"log"
 
-	// WARNING!
-	// Change this to a fully-qualified import path
-	// once you place this file into your project.
-	// For example,
-	//
-	//    sw "github.com/myname/myrepo/pkg/server"
-	//
 	sw "github.com/bayashico0130/gin-app/pkg/server"
 )
 

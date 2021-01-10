@@ -1,0 +1,14 @@
+{{>partial_header}}
+package {{packageName}}
+
+{{#operations}}
+import (
+        "github.com/gin-gonic/gin"
+)
+
+type Api interface {
+    Index(c *gin.Context)
+    {{#operation}}
+    {{nickname}}(c *gin.Context)
+    {{/operation}}
+}{{/operations}}
