@@ -1,8 +1,11 @@
 FROM golang:1.15 AS build
 WORKDIR /go/src/github.com/bayashico0130/gin-app
 
+ARG GIT_USER
+ARG GIT_PASS
+
 ENV CGO_ENABLED=0
-RUN git clone https://bayashico0130:koba167008@github.com/bayashico0130/gin-app /go/src/github.com/bayashico0130/gin-app
+RUN git clone https://${GIT_USER}:${GIT_PASS}@github.com/bayashico0130/gin-app /go/src/github.com/bayashico0130/gin-app
 RUN go get -d -v -u ./...
 
 RUN go build -a -installsuffix cgo -o chimera github.com/bayashico0130/gin-app

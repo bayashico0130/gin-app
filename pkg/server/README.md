@@ -13,7 +13,7 @@ To see how to make this your own, look here:
 [README](https://openapi-generator.tech)
 
 - API version: 1.0.0
-- Build date: 2021-01-11T02:05:19.845680+09:00[Asia/Tokyo]
+- Build date: 2021-01-10T18:05:25.967Z[GMT]
 For more information, please visit [http://swagger.io](http://swagger.io)
 
 ### Running the server

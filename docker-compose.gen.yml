@@ -1,0 +1,8 @@
+version: '3'
+services:
+  openapi-generator:
+    image: openapitools/openapi-generator-cli
+    command: generate -i /local/openapi.yaml -g go-gin-server -o /project -t /local/mustache -c /local/config.json
+    volumes:
+      - ./api:/local
+      - .:/project

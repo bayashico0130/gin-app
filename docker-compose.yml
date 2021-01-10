@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      args:
+        GIT_USER: <Edit me>
+        GIT_PASS: <Edit me>
+    ports:
+      - "18080:8080"
