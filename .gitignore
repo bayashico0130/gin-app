@@ -1,6 +1,3 @@
 /.idea
 /.openapi-generator
-/pkg/server/api_default.go
-/pkg/server/model_*
-/pkg/server/routers.go
 .DS_Store
