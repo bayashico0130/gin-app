@@ -10,15 +10,11 @@
 
 package chimera
 
-import (
-        "github.com/gin-gonic/gin"
-)
+type Store struct {
 
-type Api interface {
-    Index(c *gin.Context)
-    AddPet(c *gin.Context)
-    DeletePet(c *gin.Context)
-    FindPetById(c *gin.Context)
-    FindPets(c *gin.Context)
-    GetStores(c *gin.Context)
+	Id int64 `json:"id"`
+
+	Name string `json:"name,omitempty"`
+
+	Address string `json:"address,omitempty"`
 }
