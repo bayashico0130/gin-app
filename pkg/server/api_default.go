@@ -11,13 +11,13 @@
 package chimera
 
 import (
-	"github.com/gin-gonic/gin"
+        "github.com/gin-gonic/gin"
 )
 
 type Api interface {
-	Index(c *gin.Context)
-	AddPet(c *gin.Context)
-	DeletePet(c *gin.Context)
-	FindPetById(c *gin.Context)
-	FindPets(c *gin.Context)
+    Index(c *gin.Context)
+    AddPet(c *gin.Context)
+    DeletePet(c *gin.Context)
+    FindPetById(c *gin.Context)
+    FindPets(c *gin.Context)
 }
