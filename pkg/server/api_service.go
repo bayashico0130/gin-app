@@ -48,3 +48,7 @@ func (a *ApiService) FindPetById(c *gin.Context) {
 func (a *ApiService) FindPets(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{})
 }
+
+func (a *ApiService) GetStores(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{})
+}

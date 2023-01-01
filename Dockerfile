@@ -1,4 +1,4 @@
-FROM golang:1.15 AS build
+FROM golang:1.19 AS build
 WORKDIR /go/src/github.com/bayashico0130/gin-app
 
 ARG GIT_USER

@@ -1,6 +1,6 @@
 module github.com/bayashico0130/gin-app
 
-go 1.17
+go 1.19
 
 require (
 	github.com/gin-gonic/gin v1.8.2
