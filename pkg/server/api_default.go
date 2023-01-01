@@ -20,5 +20,4 @@ type Api interface {
     DeletePet(c *gin.Context)
     FindPetById(c *gin.Context)
     FindPets(c *gin.Context)
-    GetStores(c *gin.Context)
 }

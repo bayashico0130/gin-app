@@ -70,13 +70,6 @@ func NewRouter() *gin.Engine {
             "/api/pets",
             api.FindPets,
         },
-
-        {
-            "GetStores",
-            http.MethodGet,
-            "/api/stores",
-            api.GetStores,
-        },
     }
 
 	for _, route := range routes {

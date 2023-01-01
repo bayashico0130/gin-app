@@ -131,19 +131,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           description: unexpected error
-  /stores:
-    get:
-      description: return store list
-      operationId: getStores
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Store'
-                type: array
-          description: store response
 components:
   schemas:
     Pet:
