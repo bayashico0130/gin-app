@@ -2,17 +2,17 @@ gen: docker-gen-down docker-gen-up fmt
 
 app: docker-down test vet fmt docker-up
 
-chimera: docker-gen-down docker-down test docker-gen-up fmt docker-up
+chimera: gen app
 
 # Go
 test:
 	go test -v ./...
 
 vet:
-	go vet -v ./...
+	go vet ./...
 
 fmt:
-	go fmt -v ./...
+	go fmt ./...
 
 # Docker
 docker-down:
