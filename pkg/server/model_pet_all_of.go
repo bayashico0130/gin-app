@@ -11,6 +11,5 @@
 package chimera
 
 type PetAllOf struct {
-
 	Id int64 `json:"id"`
 }

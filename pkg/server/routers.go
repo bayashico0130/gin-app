@@ -19,11 +19,11 @@ import (
 // Route is the information for every URI.
 type Route struct {
 	// Name is the name of this Route.
-	Name        string
+	Name string
 	// Method is the string for the HTTP method. ex) GET, POST etc..
-	Method      string
+	Method string
 	// Pattern is the pattern of the URI.
-	Pattern     string
+	Pattern string
 	// HandlerFunc is the handler function of this route.
 	HandlerFunc gin.HandlerFunc
 }
@@ -34,43 +34,43 @@ type Routes []Route
 // NewRouter returns a new router.
 func NewRouter() *gin.Engine {
 	router := gin.Default()
-    api := NewApiService()
-    routes := Routes{
-        {
-            "Index",
-            http.MethodGet,
-            "/api/",
-            api.Index,
-        },
+	api := NewApiService()
+	routes := Routes{
+		{
+			"Index",
+			http.MethodGet,
+			"/api/",
+			api.Index,
+		},
 
-        {
-            "AddPet",
-            http.MethodPost,
-            "/api/pets",
-            api.AddPet,
-        },
+		{
+			"AddPet",
+			http.MethodPost,
+			"/api/pets",
+			api.AddPet,
+		},
 
-        {
-            "DeletePet",
-            http.MethodDelete,
-            "/api/pets/:id",
-            api.DeletePet,
-        },
+		{
+			"DeletePet",
+			http.MethodDelete,
+			"/api/pets/:id",
+			api.DeletePet,
+		},
 
-        {
-            "FindPetById",
-            http.MethodGet,
-            "/api/pets/:id",
-            api.FindPetById,
-        },
+		{
+			"FindPetById",
+			http.MethodGet,
+			"/api/pets/:id",
+			api.FindPetById,
+		},
 
-        {
-            "FindPets",
-            http.MethodGet,
-            "/api/pets",
-            api.FindPets,
-        },
-    }
+		{
+			"FindPets",
+			http.MethodGet,
+			"/api/pets",
+			api.FindPets,
+		},
+	}
 
 	for _, route := range routes {
 		switch route.Method {
