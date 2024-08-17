@@ -1,17 +1,13 @@
-FROM golang:1.19 AS build
-WORKDIR /go/src/github.com/bayashico0130/gin-app
+FROM golang:1.23 AS build
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN go build -a -installsuffix cgo -o chimera /app/main.go
 
-ARG GIT_USER
-ARG GIT_PASS
-
-ENV CGO_ENABLED=0
-RUN git clone https://${GIT_USER}:${GIT_PASS}@github.com/bayashico0130/gin-app /go/src/github.com/bayashico0130/gin-app
-RUN go get -d -v -u ./...
-
-RUN go build -a -installsuffix cgo -o chimera github.com/bayashico0130/gin-app
-
-FROM scratch AS runtime
+FROM ubuntu AS runtime
+WORKDIR /app
 ENV GIN_MODE=debug
-COPY --from=build /go/src/github.com/bayashico0130/gin-app/chimera ./
+COPY --from=build /app/chimera .
 EXPOSE 8080/tcp
-ENTRYPOINT ["./chimera"]
+CMD ["/app/chimera"]

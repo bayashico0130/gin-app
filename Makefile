@@ -16,13 +16,14 @@ fmt:
 
 # Docker
 docker-down:
-	docker-compose -f docker-compose.yml down
+	docker compose down
 
 docker-up:
-	docker-compose -f docker-compose.yml up
+	docker compose build --no-cache
+	docker compose up
 
 docker-gen-down:
-	docker-compose -f docker-compose.gen.yml down
+	docker compose -f docker-compose.gen.yml down
 
 docker-gen-up:
-	docker-compose -f docker-compose.gen.yml up
+	docker compose -f docker-compose.gen.yml up

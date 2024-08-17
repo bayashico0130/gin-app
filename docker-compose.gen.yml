@@ -1,4 +1,3 @@
-version: '3'
 services:
   openapi-generator:
     image: openapitools/openapi-generator-cli
